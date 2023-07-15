@@ -1,0 +1,27 @@
+.header {
+    height: 156px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .title {
+        font-size: 1.2rem;
+        text-align: center;
+        p {
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+    }
+}
+
+.graphContainer {
+    display: flex;
+    column-gap: 30px;
+    padding: 2rem;
+    .graph {
+        width: 60vw;
+        background: #ebebeb;
+        border-radius: 5px;
+    
+    }
+}
+
