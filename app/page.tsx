@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useState } from 'react';
+import Legend from './legend/legend.component';
 import { Edge, EdgeData, Graph } from '@/core/graph/graph';
 import { DijkstraStrategy } from '@/core/tour-strategy/tour-strategy';
 import NetworkGraph from './graph-network/graph-network.component';
 import styles from './page.module.scss';
 import { ActiveNodes } from './graph-network/models/graph-network.models';
+import { GraphCreator } from './graph-creator/graph-creator';
 import { edgeElements, nodeElements } from '@/constants/graph-dummy';
 
 export default function main() {
@@ -61,6 +63,13 @@ export default function main() {
             <p >Crea puntos y caminos entre ellos, y obtén el camino feliz.</p>
         </div>
     </header>
+    <div className={styles.containerLegend}>
+        <Legend 
+            startNode={activeNodes.startNode} 
+            endNode={activeNodes.endNode}
+            path={priorityPath}
+        />
+    </div>
     <div className={styles.graphContainer}>
         <div className={styles.graph}>
             <NetworkGraph 
@@ -72,6 +81,13 @@ export default function main() {
                 priorityPath={priorityPath}
             />
         </div>
+        <GraphCreator onChange={({nodes, edges}) => {
+            setNodes(nodes);
+            setEdges(edges);
+            if(nodes.length === 1) {
+                clearSelectedNodes();
+            }
+        }}/>
     </div>
    </> 
   );

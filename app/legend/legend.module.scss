@@ -1,0 +1,26 @@
+.container {
+    font-weight: bold;
+    p {
+        text-transform: capitalize;
+    }
+}
+
+.node {
+    background: #bef9d4;
+    border-radius: 9px;
+    text-transform: capitalize;
+    color: #4a7e66;
+    font-weight: bold;
+    padding: 2px 6px;
+}
+
+.weight {
+    color: #ff6161;
+    font-weight: bold;
+}
+
+.bold {
+    
+    margin: 9px 0;
+    font-size: 1.1rem;
+}
